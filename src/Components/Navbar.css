@@ -1,0 +1,66 @@
+button {
+    cursor: pointer;
+}
+
+.Navbar {
+    width: 100dvw;
+    height: 12dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #000000;
+}
+
+.nav {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 10dvw;
+}
+
+.tags {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 3dvw;
+}
+
+.tags a {
+    font-size: 16px;
+    color: #000000;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.triple {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 2dvw;
+}
+
+.search-panel {
+    display: flex;
+    align-items: center;
+    width: 16dvw;
+    height: 4dvh;
+    background-color: #e6e6e6f5;
+    border-radius: 8px;
+}
+
+.search-panel input {
+    width: 87%;
+    height: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    padding-left: 15px;
+}
+
+.triple button {
+    border: none;
+    background: none;
+}
