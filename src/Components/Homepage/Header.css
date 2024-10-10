@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.Header {
+    width: 100dvw;
+    height: auto;
+    display: flex;
+    gap: 2dvw;
+}
+
+.left-part {
+    width: 20dvw;
+    height: 48dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #000000;
+    gap: 2.4dvh;
+}
+
+.left-part span {
+    font-size: 17px;
+    font-weight: 300;
+    text-align: start;
+    cursor: pointer;
+}
+
+.right-part{
+    width: 80dvw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.carousel{
+    position: relative;
+    width: 70%;
+    height: auto;
+    margin-top: 3dvw;
+}
+
+.mobile{
+    position: absolute;
+    top: 30dvw;
+    background: none;
+}

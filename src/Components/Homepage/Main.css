@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+}
+
+.Main {
+    width: 100dvw;
+    height: auto;
+    gap: 5dvw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}

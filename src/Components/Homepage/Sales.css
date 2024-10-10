@@ -1,0 +1,179 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0s;
+}
+
+.Sales {
+    width: 100dvw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5dvw;
+    margin: 5dvw 0;
+    overflow: hidden;
+}
+
+.Sales h1 {
+    font-size: 20px;
+    color: #DB4444;
+    font-weight: 400;
+    display: flex;
+    gap: 0.5dvw;
+    align-items: center;
+}
+
+.Sales h1 p {
+    background-color: #DB4444;
+    color: #DB4444;
+    border-radius: 5px;
+    width: 20px;
+    height: 40px;
+}
+
+.first-part {
+    width: 100%;
+    height: 6dvw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.first-part h2 {
+    display: flex;
+    gap: 7dvw;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.carousel-part {
+    width: 200%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4dvw;
+    overflow: hidden;
+    padding-left: 0;
+    overflow: scroll;
+    transition: all 1s ease-in-out;
+
+}
+
+.card {
+    width: 20dvw;
+    height: 50dvh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7dvw;
+}
+
+.img-card {
+    position: relative;
+    width: 100%;
+    height: 70%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.img-card:hover button {
+    opacity: 100;
+}
+
+.img-card img {
+    width: 10dvw;
+}
+
+.img-card span {
+    position: absolute;
+    top: 1dvw;
+    left: 1dvw;
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #DB4444;
+    font-size: 20px;
+    color: #fff;
+}
+
+.img-card button {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6dvh;
+    background-color: black;
+    color: #fff;
+    font-size: 22px;
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-card button:active{
+    background-color: #c9c9c9;
+}
+
+.card b {
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+}
+
+.card p {
+    display: flex;
+    gap: 1dvw;
+    color: #DB4444;
+}
+
+.card p s {
+    color: #b6b6b6;
+}
+
+.card h2 {
+    display: flex;
+    gap: 0.3dvw;
+    color: #b6b6b6;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.card h2 img {
+    width: 1dvw;
+    cursor: pointer;
+}
+
+.btn{
+    display: flex;
+    gap: 3dvw;
+    padding-right: 3dvw;
+}
+
+.btn button{
+    width: 3dvw;
+    height: 5dvh;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    border: 1px solid black;
+}
+
+.view{
+    width: 15dvw;
+    height: 6dvh;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #DB4444;
+    color: #fff;
+    font-size: 18px;
+}
