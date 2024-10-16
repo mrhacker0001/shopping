@@ -65,7 +65,7 @@ function Sales() {
                 </h2>
 
                 {/* Chap va O'ng tugmalar */}
-                <div className='btn'>
+                <div className='btnbest'>
                     <button onClick={handlePrev} disabled={currentIndex === 0}>
                         <KeyboardArrowLeft />
                     </button>
