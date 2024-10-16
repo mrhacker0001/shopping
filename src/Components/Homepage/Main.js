@@ -5,6 +5,7 @@ import Sales from './Sales'
 import Category from './Category'
 import BestSellingProducts from './BestSellingProducts'
 import Music from './Music'
+import OurProducts from './OurProducts'
 
 function Main() {
   return (
@@ -14,6 +15,7 @@ function Main() {
       <Category />
       <BestSellingProducts />
       <Music />
+      <OurProducts />
     </div>
   )
 }

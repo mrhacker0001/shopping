@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.OurProducts {
+    width: 100dvw;
+    height: 130dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2dvw;
+}
+
+.OurProducts h1 {
+    width: 80dvw;
+    height: auto;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    font-weight: 500;
+    gap: 1dvw;
+    color: #DB4444;
+}
+
+.OurProducts h1 p {
+    width: 20px;
+    height: 40px;
+    background-color: #DB4444;
+    border-radius: 5px;
+}
+
+.OurProducts h2 {
+    font-size: 52px;
+    font-weight: 600;
+    font-family: sans-serif;
+    width: 80dvw;
+}
