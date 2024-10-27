@@ -39,7 +39,7 @@
 }
 
 .all-cards {
-    width: 140dvh;
+    width: 80dvw;
     height: 110dvh;
     display: flex;
     align-items: center;
@@ -101,7 +101,7 @@
     width: 8dvw;
 }
 
-.th-carts h2{
+.th-carts h2 {
     font-size: 20px;
     font-family: sans-serif;
     font-weight: 500;
@@ -126,4 +126,16 @@
     display: flex;
     align-items: center;
     gap: 0.2dvw;
+}
+
+.view-btn {
+    width: 15dvw;
+    height: 7dvh;
+    border: none;
+    background: none;
+    background-color: #DB4444;
+    border-radius: 10px;
+
+    color: #fff;
+    font-size: 20px;
 }

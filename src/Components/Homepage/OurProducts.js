@@ -53,6 +53,7 @@ function OurProducts() {
 
         </div>
       </div>
+      <button className='view-btn'>View All Products</button>
     </div>
   )
 }

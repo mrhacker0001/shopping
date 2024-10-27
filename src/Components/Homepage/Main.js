@@ -6,6 +6,7 @@ import Category from './Category'
 import BestSellingProducts from './BestSellingProducts'
 import Music from './Music'
 import OurProducts from './OurProducts'
+import NewArrival from './NewArrival'
 
 function Main() {
   return (
@@ -16,6 +17,7 @@ function Main() {
       <BestSellingProducts />
       <Music />
       <OurProducts />
+      <NewArrival />
     </div>
   )
 }
