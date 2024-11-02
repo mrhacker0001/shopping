@@ -38,7 +38,7 @@ function OurProducts() {
                   <img src={item.img} alt="" />
                   <button className='th-btn'>Add To Cart</button>
                 </div>
-                <h2>{item.name}</h2>
+                <h3>{item.name}</h3>
                 <div className="textss">
                   <span>${item.price}</span>
                   <b>{[...Array(5)].map((_, i) => (
