@@ -11,8 +11,7 @@ import frame2 from "./assets/Frame 560.png";
 import frame3 from "./assets/Frame 560.png";
 import frame4 from "./assets/Frame 560.png";
 import frame5 from "./assets/Frame 560.png";
-import frame6 from "./assets/Frame 560.png";
-import { Opacity } from '@mui/icons-material';
+import frame6 from "./assets/Frame 560.png"
 
 function Header() {
     const theme = useTheme();
