@@ -5,6 +5,7 @@ import Category from './Category'
 import BestSellingProducts from './BestSellingProducts'
 import OurProducts from './OurProducts'
 import NewArrival from './NewArrival'
+import Footer from '../Footer'
 
 
 function Home() {
@@ -16,6 +17,7 @@ function Home() {
             <BestSellingProducts />
             <OurProducts />
             <NewArrival />
+            <Footer />
         </div>
     )
 }
