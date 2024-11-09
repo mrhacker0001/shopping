@@ -9,7 +9,8 @@ import boot from './imgs/Copa_Sense 1.png'
 import game from './imgs/GP11_PRD3 1.png'
 import kit from './imgs/698717_Z8A1X_3475_001_100_0000_Light-Reversible-quilted-satin-jacket 1.png'
 import star from './assets/Vector (14).png'
-
+import heart from './assets/heart small.png'
+import vision from './assets/Group (5).png'
 
 
 
@@ -24,6 +25,19 @@ function OurProducts() {
     { img: game, name: "GP11 Shooter USB Gamepad", price: 660, star: star, rank: 55 },
     { img: kit, name: "Quilted Satin Jacket", price: 660, star: star, rank: 55 },
   ]
+  const addToCart = (item) => {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingItem = cart.find((cartItem) => cartItem.name === item.name);
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ ...item, quantity: 1 });
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.reload();
+
+  };
   return (
     <div className='OurProducts'>
       <h1><p>.</p>Our Products</h1>
@@ -37,6 +51,10 @@ function OurProducts() {
                 <div className="img-carts">
                   <img src={item.img} alt="" />
                   <button className='th-btn'>Add To Cart</button>
+                  <div className="wish-card">
+                    <button onClick={() => addToCart(item)}><img src={heart} alt="" /></button>
+                    <button><img src={vision} alt="" /></button>
+                  </div>
                 </div>
                 <h3>{item.name}</h3>
                 <div className="textss">

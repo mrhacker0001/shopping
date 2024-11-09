@@ -6,10 +6,11 @@ import yulduz from './assets/Vector (14).png';
 import klaviatura from './assets/ak-900-01-500x500 1.png'
 import televizor from './assets/g27cq4-500x500 1.png'
 import stul from './assets/sam-moghadam-khamseh-kvmdsTrGOBM-unsplash 1.png'
+import heart from './assets/heart small.png'
+import vision from './assets/Group (5).png'
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
 function Sales() {
-    // `data` massivi komponentdan oldin e'lon qilinishi kerak
     const data = [
         { img: play, discount: 40, name: 'HAVIT HV-G92 Gamepad', price: 120, discount2: 160, star: yulduz },
         { img: klaviatura, discount: 35, name: 'AK-900 Wired Keyboard', price: 960, discount2: 1160, star: yulduz },
@@ -25,7 +26,6 @@ function Sales() {
     const cardsToShow = 4;
     const totalCards = data.length;
 
-    // Carouselni o'ngga va chapga siljitish
     const handleNext = () => {
         if (currentIndex < totalCards - cardsToShow) {
             setCurrentIndex(currentIndex + 2);
@@ -38,10 +38,8 @@ function Sales() {
         }
     };
 
-    // Skidka tugash sanasi
     const endDate = new Date(Date.now() + 3 * 24 * 60 * 60 * 1000 + 23 * 60 * 60 * 1000 + 20 * 60 * 1000 + 56 * 1000);
 
-    // Countdown renderer
     const renderer = ({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
             return <span>Time is up!</span>;
@@ -54,17 +52,29 @@ function Sales() {
         }
     };
 
+    const addToCart = (item) => {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const existingItem = cart.find((cartItem) => cartItem.name === item.name);
+        if (existingItem) {
+            existingItem.quantity += 1; 
+        } else {
+            cart.push({ ...item, quantity: 1 }); 
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.reload();
+
+    };
+
     return (
         <div className='Sales'>
             <h1><p>.</p> Today’s</h1>
 
-            {/* Flash Sales va Countdown */}
             <div className='first-part'>
                 <h2>
                     Flash Sales <span><Countdown date={endDate} renderer={renderer} /></span>
                 </h2>
 
-                {/* Chap va O'ng tugmalar */}
                 <div className='btnbest'>
                     <button onClick={handlePrev} disabled={currentIndex === 0}>
                         <KeyboardArrowLeft />
@@ -75,23 +85,23 @@ function Sales() {
                 </div>
             </div>
 
-            {/* Carousel qismi */}
-            <div className='carousel-part'
-                style={{
-                    transform: `translateX(-${currentIndex * 50 / cardsToShow}%)`,
-                }}>
-
+            <div className='carousel-part' style={{ transform: `translateX(-${currentIndex * 50 / cardsToShow}%)` }}>
                 {data.map((item, index) => (
                     <div className='card' key={index}>
                         <div className='img-card'>
                             <img src={item.img} alt='...' />
                             <span>- {item.discount}%</span>
-                            <button>Add To Cart</button>
+                            <button className='add-btn'>
+                                Add To Cart
+                            </button>
+                            <div className="wish-card">
+                                <button onClick={() => addToCart(item)}><img src={heart} alt="" /></button>
+                                <button><img src={vision} alt="" /></button>
+                            </div>
                         </div>
                         <b>{item.name}</b>
                         <p>
-                            ${item.price}
-                            <s>${item.discount2}</s>
+                            ${item.price} <s>${item.discount2}</s>
                         </p>
                         <h2>
                             {[...Array(5)].map((_, i) => (

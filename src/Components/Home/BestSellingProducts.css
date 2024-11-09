@@ -106,6 +106,26 @@
     transition: 0.3s ease-in-out;
 }
 
+.wish-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2dvh;
+    width: 4dvw;
+    height: 13dvh;
+}
+
+.wish-card button {
+    width: 2.5dvw;
+    height: 4.4dvh;
+    background-color: #fff;
+    border: none;
+    border-radius: 55%;
+}
+
+.wish-card button img {
+    width: 1.5dvw;
+}
+
 .product h1 {
     font-size: 20px;
     font-weight: 500;

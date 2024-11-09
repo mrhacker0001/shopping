@@ -2,9 +2,9 @@ import React from 'react'
 import './Navbar.css'
 import search from "../assets/Component 2.png"
 import like from "../assets/Wishlist.png"
-import cart from "../assets/Cart1 with buy.png"
+import cartt from "../assets/Cart1 with buy.png"
 import { useDispatch } from 'react-redux';
-import { setCurrentPage } from '../redux/navbarSlice';
+import { setCurrentPage } from '../Components/Redux/navbarSlice';
 import { NavLink } from 'react-router-dom';
 
 function Navbar() {
@@ -13,6 +13,10 @@ function Navbar() {
     const handleTagClick = (page) => {
         dispatch(setCurrentPage(page));
     };
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
     return (
         <div className='Navbar'>
@@ -30,11 +34,13 @@ function Navbar() {
                         <input type="text" name='text' placeholder='What are you looking for?' />
                         <img src={search} alt="Search Icon" />
                     </div>
-                    <button>
-                        <img src={like} alt="Wishlist Icon" />
+                    <button className='wish-btn'>
+                        <NavLink to="/Wishlist"> <img src={like} alt="Wishlist Icon" /></NavLink>
+                        <p className='quantity'>{totalQuantity}</p>
+
                     </button>
                     <button>
-                        <NavLink to="Cart"><img src={cart} alt="Cart Icon" /></NavLink>
+                        <NavLink to="/Cart"><img src={cartt} alt="" /></NavLink>
                     </button>
                 </div>
             </div>

@@ -4,6 +4,54 @@
     box-sizing: 0s;
 }
 
+.Wishlist {
+    width: 100dvw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5dvh;
+    gap: 10dvh;
+}
+
+.wishlist-card {
+    width: 100dvw;
+    height: 15dvh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10dvw;
+}
+
+.wishlist-card h2 {
+    font-size: 24px;
+    font-weight: 450;
+    font-family: sans-serif;
+    letter-spacing: 1.5px;
+}
+
+.wishlist-card button {
+    width: 15dvw;
+    height: 6dvh;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid #000000;
+
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.shop-cards{
+    width: 100dvw;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3dvw;
+    padding: 0 5dvw;
+}
+
 .Sales {
     width: 100dvw;
     height: auto;
@@ -80,7 +128,7 @@
     cursor: pointer;
 }
 
-.img-card:hover button {
+.img-card:hover .add-btn {
     opacity: 100;
 }
 
@@ -103,7 +151,7 @@
     color: #fff;
 }
 
-.img-card button {
+.add-btn {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -119,8 +167,31 @@
     transition: all 0.3s ease-in-out;
 }
 
-.img-card button:active {
+.add-btn:active {
     background-color: #c9c9c9;
+}
+
+.wish-card {
+    position: absolute;
+    top: 2dvh;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2dvh;
+    width: 4dvw;
+    height: 13dvh;
+}
+
+.wish-card button {
+    width: 2.5dvw;
+    height: 4.4dvh;
+    background-color: #fff;
+    border: none;
+    border-radius: 55%;
+}
+
+.wish-card button img {
+    width: 1.5dvw;
 }
 
 .card b {
@@ -177,3 +248,4 @@
     color: #fff;
     font-size: 18px;
 }
+

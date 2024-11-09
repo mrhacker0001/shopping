@@ -64,3 +64,24 @@ button {
     border: none;
     background: none;
 }
+
+.wish-btn {
+    border: none;
+    background: none;
+    position: relative;
+}
+
+.quantity {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.8dvw;
+    height: 1.5dvh;
+    background-color: #DB4444;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 14px;
+}
