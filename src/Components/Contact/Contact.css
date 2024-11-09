@@ -1,0 +1,93 @@
+.Contact {
+    width: 100dvw;
+    height: 90dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5dvw;
+}
+
+.call-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4dvh;
+    padding: 2dvw;
+    width: 25dvw;
+    height: 60dvh;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.call-card h1 {
+    display: flex;
+    align-items: center;
+    gap: 1dvw;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+.call-card span {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.call-card b {
+    width: 96%;
+    border-bottom: 1px solid #000;
+}
+
+.input-card {
+    width: 60dvw;
+    height: 60dvh;
+    display: flex;
+    flex-direction: column;
+    gap: 3dvh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 3dvw;
+}
+
+.in-card {
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 3dvw;
+}
+
+.in-card input {
+    width: 16dvw;
+    height: 6dvh;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(234, 234, 234);
+
+    font-size: 20px;
+    padding-left: 1dvw;
+}
+
+.message {
+    width: 100%;
+    height: 30dvh;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: rgb(234, 234, 234);
+
+    font-size: 20px;
+    padding-left: 1dvw;
+    padding-bottom: 25dvh;
+}
+
+.input-card button {
+    width: 15dvw;
+    height: 6dvh;
+    background: none;
+    border: none;
+    background-color: #DB4444;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
