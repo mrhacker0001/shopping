@@ -62,7 +62,6 @@ function Sales() {
             cart.push({ ...item, quantity: 1 }); 
         }
         localStorage.setItem('cart', JSON.stringify(cart));
-        window.location.reload();
 
     };
 

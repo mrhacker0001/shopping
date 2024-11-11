@@ -7,6 +7,7 @@ import About from "./About/About";
 import Signup from "./Signup/Signup";
 import Cart from "./Cart/Cart";
 import Wishlist from './Wishlist/Wishlist';
+import Profile from './Profile/Profile';
 
 
 
@@ -20,6 +21,7 @@ function Main() {
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/Wishlist" element={<Wishlist />} />
+        <Route path="/Profile" element={<Profile />} />
       </Routes>
     </div>
   )

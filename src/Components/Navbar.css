@@ -85,3 +85,10 @@ button {
     color: #fff;
     font-size: 14px;
 }
+
+.profile-icon {
+    width: 2dvw;
+    height: 3dvh;
+    position: relative;
+}
+

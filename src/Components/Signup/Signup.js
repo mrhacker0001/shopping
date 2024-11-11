@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUser, loadUserFromLocalStorage } from '../Redux/userSlice';
+import { useNavigate } from 'react-router-dom'; // React Router hooki
 import './Signup.css';
 import side from './assets/Side Image.png';
 import google from './assets/Icon-Google.png';
@@ -8,6 +9,7 @@ import google from './assets/Icon-Google.png';
 function Signup() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user) || {};
+  const navigate = useNavigate(); // Sahifaga yo'naltirish uchun
 
   const [name, setName] = useState('');
   const [emailorPhone, setEmailorPhone] = useState('');
@@ -51,11 +53,13 @@ function Signup() {
     if (passwordlogin) userData.passwordlogin = passwordlogin;
     if (emailorPhonelogin) userData.emailorPhonelogin = emailorPhonelogin;
 
-
     if (Object.keys(userData).length > 0) {
       dispatch(setUser(userData));
+      localStorage.setItem('user', JSON.stringify(userData));
       alert("Foydalanuvchi ma'lumotlari muvaffaqiyatli saqlandi!");
-      resetForm(); // Inputlarni bo‘shatish
+
+      navigate('/'); 
+
     } else {
       alert("Iltimos, barcha maydonlarni to'ldiring.");
     }
