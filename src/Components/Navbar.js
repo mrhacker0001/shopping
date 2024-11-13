@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { setCurrentPage } from '../Components/Redux/navbarSlice';
 import { NavLink } from 'react-router-dom';
 import profile from '../assets/user.png'
+// import users from '../assets/user (1).png'
 // import bag from '../assets/Group (6).png'
 // import cancel from '../assets/icon-cancel.png'
 // import review from '../assets/Icon-Reviews.png'
@@ -25,13 +26,7 @@ function Navbar() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
-    // const data = [
-    //     { img: profile, name: 'Manage My Account' },
-    //     { img: bag, name: 'My Order' },
-    //     { img: cancel, name: 'My Cancellations' },
-    //     { img: review, name: 'My Reviews' },
-    //     { img: logout, name: 'Logout' },
-    // ]
+
     return (
         <div className='Navbar'>
             <div className="nav">
@@ -60,11 +55,19 @@ function Navbar() {
 
                     {user && user.name && (
                         <div className="profile-icon">
-                            <button>
+                            <button className='profile'>
                                 <NavLink to="/Profile">
                                     <img src={profile || '/default-profile.png'} alt="Profile" className="profile-img" />
                                 </NavLink>
                             </button>
+                            {/* <div className="user-card">
+                                <button><img src={users} alt="" />Manage My Account</button>
+                                <button><img src={bag} alt="" />My Order</button>
+                                <button><img src={cancel} alt="" />My Cancellations</button>
+                                <button><img src={review} alt="" />My Reviews</button>
+                                <button><img src={logout} alt="" />Logout</button>
+                            </div> */}
+
                         </div>
                     )}
 
