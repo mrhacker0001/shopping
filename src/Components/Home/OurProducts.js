@@ -16,14 +16,14 @@ import vision from './assets/Group (5).png'
 
 function OurProducts() {
   const data = [
-    { img: food, name: "Breed Dry Dog Food", price: 100, star: star, rank: 65 },
-    { img: camera, name: "CANON EOS DSLR Camera", price: 360, star: star, rank: 95 },
-    { img: laptop, name: "ASUS FHD Gaming Laptop", price: 700, star: star, rank: 325 },
-    { img: curology, name: "Curology Product Set ", price: 500, star: star, rank: 145 },
-    { img: car, name: "Kids Electric Car", price: 960, star: star, rank: 65 },
-    { img: boot, name: "Jr. Zoom Soccer Cleats", price: 1160, star: star, rank: 35 },
-    { img: game, name: "GP11 Shooter USB Gamepad", price: 660, star: star, rank: 55 },
-    { img: kit, name: "Quilted Satin Jacket", price: 660, star: star, rank: 55 },
+    { img: food, name: "Breed Dry Dog Food", price: 100, star: star, rank: 65, count: 1 },
+    { img: camera, name: "CANON EOS DSLR Camera", price: 360, star: star, rank: 95, count: 1 },
+    { img: laptop, name: "ASUS FHD Gaming Laptop", price: 700, star: star, rank: 325, count: 1 },
+    { img: curology, name: "Curology Product Set ", price: 500, star: star, rank: 145, count: 1 },
+    { img: car, name: "Kids Electric Car", price: 960, star: star, rank: 65, count: 1 },
+    { img: boot, name: "Jr. Zoom Soccer Cleats", price: 1160, star: star, rank: 35, count: 1 },
+    { img: game, name: "GP11 Shooter USB Gamepad", price: 660, star: star, rank: 55, count: 1 },
+    { img: kit, name: "Quilted Satin Jacket", price: 660, star: star, rank: 55, count: 1 },
   ]
   const addToCart = (item) => {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -37,6 +37,15 @@ function OurProducts() {
     localStorage.setItem('cart', JSON.stringify(cart));
 
   };
+
+  const addToWishlist = (item) => {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const existingItem = wishlist.find((wishlistItem) => wishlistItem.name === item.name);
+    if (!existingItem) {
+      wishlist.push(item);
+    }
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  };
   return (
     <div className='OurProducts'>
       <h1><p>.</p>Our Products</h1>
@@ -49,9 +58,9 @@ function OurProducts() {
               <div className="th-carts" key={index}>
                 <div className="img-carts">
                   <img src={item.img} alt="" />
-                  <button className='th-btn'>Add To Cart</button>
+                  <button className='th-btn' onClick={() => addToCart(item)}>Add To Cart</button>
                   <div className="wish-card">
-                    <button onClick={() => addToCart(item)}><img src={heart} alt="" /></button>
+                    <button onClick={() => addToWishlist(item)} ><img src={heart} alt="" /></button>
                     <button><img src={vision} alt="" /></button>
                   </div>
                 </div>

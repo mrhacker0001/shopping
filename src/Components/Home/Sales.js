@@ -12,14 +12,14 @@ import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
 function Sales() {
     const data = [
-        { img: play, discount: 40, name: 'HAVIT HV-G92 Gamepad', price: 120, discount2: 160, star: yulduz },
-        { img: klaviatura, discount: 35, name: 'AK-900 Wired Keyboard', price: 960, discount2: 1160, star: yulduz },
-        { img: televizor, discount: 30, name: 'IPS LCD Gaming Monitor', price: 370, discount2: 400, star: yulduz },
-        { img: stul, discount: 25, name: 'S-Series Comfort Chair ', price: 375, discount2: 400, star: yulduz },
-        { img: play, discount: 40, name: 'HAVIT HV-G92 Gamepad', price: 120, discount2: 160, star: yulduz },
-        { img: klaviatura, discount: 35, name: 'AK-900 Wired Keyboard', price: 960, discount2: 1160, star: yulduz },
-        { img: televizor, discount: 30, name: 'IPS LCD Gaming Monitor', price: 370, discount2: 400, star: yulduz },
-        { img: stul, discount: 25, name: 'S-Series Comfort Chair ', price: 375, discount2: 500, star: yulduz },
+        { img: play, discount: 40, name: 'HAVIT HV-G92 Gamepad', price: 120, discount2: 160, star: yulduz, count: 1 },
+        { img: klaviatura, discount: 35, name: 'AK-900 Wired Keyboard', price: 960, discount2: 1160, star: yulduz, count: 1 },
+        { img: televizor, discount: 30, name: 'IPS LCD Gaming Monitor', price: 370, discount2: 400, star: yulduz, count: 1 },
+        { img: stul, discount: 25, name: 'S-Series Comfort Chair ', price: 375, discount2: 400, star: yulduz, count: 1 },
+        { img: play, discount: 40, name: 'HAVIT HV-G92 Gamepad', price: 120, discount2: 160, star: yulduz, count: 1 },
+        { img: klaviatura, discount: 35, name: 'AK-900 Wired Keyboard', price: 960, discount2: 1160, star: yulduz, count: 1 },
+        { img: televizor, discount: 30, name: 'IPS LCD Gaming Monitor', price: 370, discount2: 400, star: yulduz, count: 1 },
+        { img: stul, discount: 25, name: 'S-Series Comfort Chair ', price: 375, discount2: 500, star: yulduz, count: 1 },
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -57,12 +57,21 @@ function Sales() {
 
         const existingItem = cart.find((cartItem) => cartItem.name === item.name);
         if (existingItem) {
-            existingItem.quantity += 1; 
+            existingItem.quantity += 1;
         } else {
-            cart.push({ ...item, quantity: 1 }); 
+            cart.push({ ...item, quantity: 1 });
         }
         localStorage.setItem('cart', JSON.stringify(cart));
 
+    };
+
+    const addToWishlist = (item) => {
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+        const existingItem = wishlist.find((wishlistItem) => wishlistItem.name === item.name);
+        if (!existingItem) {
+            wishlist.push(item);
+        }
+        localStorage.setItem('wishlist', JSON.stringify(wishlist));
     };
 
     return (
@@ -90,11 +99,11 @@ function Sales() {
                         <div className='img-card'>
                             <img src={item.img} alt='...' />
                             <span>- {item.discount}%</span>
-                            <button className='add-btn'>
+                            <button className='add-btn' onClick={() => addToCart(item)}>
                                 Add To Cart
                             </button>
                             <div className="wish-card">
-                                <button onClick={() => addToCart(item)}><img src={heart} alt="" /></button>
+                                <button onClick={() => addToWishlist(item)} ><img src={heart} alt="" /></button>
                                 <button><img src={vision} alt="" /></button>
                             </div>
                         </div>
